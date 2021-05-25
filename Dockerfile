@@ -1,6 +1,6 @@
 FROM python:3.9.5-alpine
-WORKDIR /NutritionAssistant
-ADD . /NutritionAssistant
+WORKDIR /nutritionassistant
+ADD . /nutritionassistant
 
 RUN set -e; \
         apk add --no-cache --virtual .build-deps \
@@ -11,6 +11,6 @@ RUN set -e; \
                 python3-dev \
                 postgresql-dev \
         ;
-COPY requirements.txt /NutritionAssistant
+COPY requirements.txt /nutritionassistant
 RUN pip install -r requirements.txt
 CMD ["python","app.py"]
